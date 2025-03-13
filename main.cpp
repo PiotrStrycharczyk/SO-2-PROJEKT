@@ -1,6 +1,11 @@
-#include <iostream>
+#include "Helper.h"
+#include "Program.h"
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    Program program;
+    program.mainProgram();
+
     return 0;
 }

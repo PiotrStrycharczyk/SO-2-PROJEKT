@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: Filozofowie
-# Configurations: Debug
+# Configurations: 
 # =============================================================================
 
 #############################################
@@ -20,11 +20,6 @@
 
 ninja_required_version = 1.5
 
-
-#############################################
-# Set configuration variable for custom commands.
-
-CONFIGURATION = Debug
 # =============================================================================
 # Include auxiliary files.
 
@@ -39,7 +34,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/Piotr/CLionProjects/Filozofowie/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/Piotr/CLionProjects/Filozofowie/cmake-build-default/
 # =============================================================================
 # Object build statements for EXECUTABLE target Filozofowie
 
@@ -49,41 +44,41 @@ cmake_ninja_workdir = C$:/Users/Piotr/CLionProjects/Filozofowie/cmake-build-debu
 
 build cmake_object_order_depends_target_Filozofowie: phony || CMakeFiles/Filozofowie.dir
 
-build CMakeFiles/Filozofowie.dir/main.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/main.cpp || cmake_object_order_depends_target_Filozofowie
+build CMakeFiles/Filozofowie.dir/main.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_ C$:/Users/Piotr/CLionProjects/Filozofowie/main.cpp || cmake_object_order_depends_target_Filozofowie
   DEP_FILE = CMakeFiles\Filozofowie.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
   TARGET_COMPILE_PDB = CMakeFiles\Filozofowie.dir\
   TARGET_PDB = Filozofowie.pdb
 
-build CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/Philosopher.cpp || cmake_object_order_depends_target_Filozofowie
+build CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_ C$:/Users/Piotr/CLionProjects/Filozofowie/Philosopher.cpp || cmake_object_order_depends_target_Filozofowie
   DEP_FILE = CMakeFiles\Filozofowie.dir\Philosopher.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
   TARGET_COMPILE_PDB = CMakeFiles\Filozofowie.dir\
   TARGET_PDB = Filozofowie.pdb
 
-build CMakeFiles/Filozofowie.dir/Helper.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/Helper.cpp || cmake_object_order_depends_target_Filozofowie
+build CMakeFiles/Filozofowie.dir/Helper.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_ C$:/Users/Piotr/CLionProjects/Filozofowie/Helper.cpp || cmake_object_order_depends_target_Filozofowie
   DEP_FILE = CMakeFiles\Filozofowie.dir\Helper.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
   TARGET_COMPILE_PDB = CMakeFiles\Filozofowie.dir\
   TARGET_PDB = Filozofowie.pdb
 
-build CMakeFiles/Filozofowie.dir/Program.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/Program.cpp || cmake_object_order_depends_target_Filozofowie
+build CMakeFiles/Filozofowie.dir/Program.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_ C$:/Users/Piotr/CLionProjects/Filozofowie/Program.cpp || cmake_object_order_depends_target_Filozofowie
   DEP_FILE = CMakeFiles\Filozofowie.dir\Program.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
   TARGET_COMPILE_PDB = CMakeFiles\Filozofowie.dir\
   TARGET_PDB = Filozofowie.pdb
 
-build CMakeFiles/Filozofowie.dir/Semaphore.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/Semaphore.cpp || cmake_object_order_depends_target_Filozofowie
+build CMakeFiles/Filozofowie.dir/Semaphore.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_ C$:/Users/Piotr/CLionProjects/Filozofowie/Semaphore.cpp || cmake_object_order_depends_target_Filozofowie
   DEP_FILE = CMakeFiles\Filozofowie.dir\Semaphore.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
   TARGET_COMPILE_PDB = CMakeFiles\Filozofowie.dir\
@@ -97,8 +92,7 @@ build CMakeFiles/Filozofowie.dir/Semaphore.cpp.obj: CXX_COMPILER__Filozofowie_un
 #############################################
 # Link the executable Filozofowie.exe
 
-build Filozofowie.exe: CXX_EXECUTABLE_LINKER__Filozofowie_Debug CMakeFiles/Filozofowie.dir/main.cpp.obj CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj CMakeFiles/Filozofowie.dir/Helper.cpp.obj CMakeFiles/Filozofowie.dir/Program.cpp.obj CMakeFiles/Filozofowie.dir/Semaphore.cpp.obj
-  FLAGS = -g
+build Filozofowie.exe: CXX_EXECUTABLE_LINKER__Filozofowie_ CMakeFiles/Filozofowie.dir/main.cpp.obj CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj CMakeFiles/Filozofowie.dir/Helper.cpp.obj CMakeFiles/Filozofowie.dir/Program.cpp.obj CMakeFiles/Filozofowie.dir/Semaphore.cpp.obj
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   POST_BUILD = cd .
@@ -113,7 +107,7 @@ build Filozofowie.exe: CXX_EXECUTABLE_LINKER__Filozofowie_Debug CMakeFiles/Filoz
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Piotr\CLionProjects\Filozofowie\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Piotr\CLionProjects\Filozofowie\cmake-build-default && "C:\Program Files\JetBrains\CLion 2024.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -124,7 +118,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Piotr\CLionProjects\Filozofowie\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Piotr\CLionProjects\Filozofowie -BC:\Users\Piotr\CLionProjects\Filozofowie\cmake-build-debug"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Piotr\CLionProjects\Filozofowie\cmake-build-default && "C:\Program Files\JetBrains\CLion 2024.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Piotr\CLionProjects\Filozofowie -BC:\Users\Piotr\CLionProjects\Filozofowie\cmake-build-default"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -142,7 +136,7 @@ build Filozofowie: phony Filozofowie.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Piotr/CLionProjects/Filozofowie/cmake-build-debug
+# Folder: C:/Users/Piotr/CLionProjects/Filozofowie/cmake-build-default
 
 build all: phony Filozofowie.exe
 

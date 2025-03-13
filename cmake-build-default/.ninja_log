@@ -1,0 +1,7 @@
+# ninja log v5
+13	115	7636015030362835	CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj	efa63461b0065e6d
+5	118	7636015030385172	CMakeFiles/Filozofowie.dir/main.cpp.obj	763aa9ed216ef12b
+34	304	7636015032242735	CMakeFiles/Filozofowie.dir/Semaphore.cpp.obj	f33302af569a5f91
+27	307	7636015032242735	CMakeFiles/Filozofowie.dir/Program.cpp.obj	be96e18af56cc702
+19	550	7636015034730331	CMakeFiles/Filozofowie.dir/Helper.cpp.obj	f0154455f6d1481a
+551	712	7636015036293855	Filozofowie.exe	681c0db46f5e8ec4
