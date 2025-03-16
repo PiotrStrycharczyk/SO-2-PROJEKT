@@ -6,7 +6,7 @@
 
 int Fork::count = 0;
 
-Fork::Fork(int state){
-    this->state = state;
+Fork::Fork(int state): state(state) {
+
 }
 

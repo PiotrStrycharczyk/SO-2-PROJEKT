@@ -1,74 +1,43 @@
-//
-// Created by Piotr on 13.03.2025.
-//
-
 #include "Philosopher.h"
-
 #include <iostream>
 #include <thread>
-#include <mutex>
+#include <chrono>
+#include <memory>  // For std::unique_ptr
 
-std::mutex mtx;  // Mutex for synchronisation
 int Philosopher::sharedCounter = 0;
-std::vector<Fork> Philosopher::forks;
-
-Philosopher::Philosopher() {}
+std::vector<std::unique_ptr<std::mutex>> Philosopher::forks;  // Vector of mutex pointers
 
 void Philosopher::createForks(int count) {
-    for(int i = 0 ; i < count ; i++) {
-        Fork fork(1);//all of them initially are free (1)
-        fork.index = i;
-        forks.push_back(fork);
+    forks.clear();
+    for (int i = 0; i < count; i++) {
+        forks.push_back(std::make_unique<std::mutex>());  // Allocate mutex dynamically
     }
 }
-
-bool Philosopher::pickFork(int index) {
-    std::lock_guard<std::mutex> lock(mtx);
-    if (forks[index].state == 1) {
-        forks[index].state = 0;
-        return true;
-    }
-    return false;
-}
-
 
 void Philosopher::eat(int id) {
-    std::cout<<"Philosopher "<< id <<" is hungry: "<<std::endl;
     int leftFork = id;
     int rightFork = (id + 1) % sharedCounter;
 
-    // Try to pick up both forks atomically
-    if (!pickFork(leftFork) || !pickFork(rightFork)) {
-        if (pickFork(leftFork)) forks[leftFork].state = 1; // Release left fork if right fork isn't available
-        return;
-    }
+    std::cout << "Philosopher " << id << " is hungry." << std::endl;
 
-    // Eating
-    std::cout << "Philosopher " << id << " is eating.\n";
-    std::this_thread::sleep_for(std::chrono::seconds(5)); // Simulate eating
+    // Lock both forks using std::unique_lock and std::lock()
+    std::unique_lock<std::mutex> leftLock(*forks[leftFork], std::defer_lock);
+    std::unique_lock<std::mutex> rightLock(*forks[rightFork], std::defer_lock);
 
-    // Release both forks after eating
-    putOffFork(id);
-}
+    std::lock(leftLock, rightLock);
 
-void Philosopher::putOffFork(int id) {
-    int leftFork = id;
-    int rightFork = (id + 1) % sharedCounter;
+    std::cout << "Philosopher " << id << " is eating." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(2)); // Simulate eating
 
-    std::lock_guard<std::mutex> lock(mtx); // Lock mutex to modify forks safely
-
-    forks[leftFork].state = 1;  // Release left fork
-    forks[rightFork].state = 1; // Release right fork
-
-    std::cout << "Philosopher " << id << " has finished eating.\n";
+    std::cout << "Philosopher " << id << " has finished eating." << std::endl;
 }
 
 void Philosopher::think(int id) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));//thinking for 0.5s
-    std::cout<<"Philosopher "<<id<<" is thinking"<<std::endl;
+    std::cout << "Philosopher " << id << " is thinking." << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Simulate thinking
 }
 
-void Philosopher::dine(int id) {//infinity loop
+void Philosopher::dine(int id) {
     while (true) {
         think(id);
         eat(id);

@@ -1,30 +1,19 @@
-//
-// Created by Piotr on 13.03.2025.
-//
-
 #ifndef PHILOSOPHER_H
 #define PHILOSOPHER_H
-#include "Fork.h"
-#include <vector>
 
+#include <vector>
+#include <mutex>
+#include <memory>  // For std::unique_ptr
 
 class Philosopher {
 public:
-    Philosopher();  // Constructor
     static int sharedCounter;
+    static std::vector<std::unique_ptr<std::mutex>> forks;  // Vector of mutex pointers
 
-    void eat(int id);//want to grab a fork
-    void think(int id);
-    void dine(int id);
     static void createForks(int count);
-    static std::vector<Fork> forks;
-
-    void putOffFork(int id);
-    bool pickFork(int index);
-
-
+    void dine(int id);
+    void eat(int id);
+    void think(int id);
 };
 
-
-
-#endif //PHILOSOPHER_H
+#endif // PHILOSOPHER_H
