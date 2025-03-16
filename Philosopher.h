@@ -4,17 +4,24 @@
 
 #ifndef PHILOSOPHER_H
 #define PHILOSOPHER_H
-#include "Semaphore.h"
+#include "Fork.h"
+#include <vector>
 
 
 class Philosopher {
 public:
-    void doWork();
-    void wait();//want to grab a fork
-    void signal();//releasing his fork
+    Philosopher();  // Constructor
+    static int sharedCounter;
 
-    std::vector<Semaphore> semaphores;
-    void getSemaphores(std::vector<Semaphore> &);
+    void eat(int id);//want to grab a fork
+    void think(int id);
+    void dine(int id);
+    static void createForks(int count);
+    static std::vector<Fork> forks;
+
+    void putOffFork(int id);
+    bool pickFork(int index);
+
 
 };
 

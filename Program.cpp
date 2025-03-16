@@ -1,42 +1,32 @@
-//
-// Created by Piotr on 13.03.2025.
-//
-
 #include "Program.h"
-
-// #include <vector>
-
 #include "Helper.h"
+#include "Philosopher.h"
 
-#include "Semaphore.h"
+#include <iostream>
+#include <vector>
+#include <thread>
 
 void Program::mainProgram() {
     Helper helper;
-    int philosophers = helper.getCountOfPhilosophers();//gettin how many philosophers are there
+    int philosophers = 5; // or use: helper.getCountOfPhilosophers();
 
-    Semaphore::count = philosophers;//initialization of number of semphores
+    Philosopher::sharedCounter = philosophers;
+    Philosopher::createForks(philosophers); // Static function to create forks
 
-    std::vector<Semaphore> chopsticks(Semaphore::count);
-    Semaphore initilization;
-    initilization.initChopsticks(chopsticks);
+    std::vector<std::thread> threads;
+    std::vector<Philosopher> philos;
 
-
-    std::vector<Philosopher> philosophs(philosophers);
-    Semaphore example;
-    example.setArray(philosophs);
-
-    // Philosopher philo;
-    // philo.getSemaphores(chopsticks);//
-    //zastapic to wskaznikamixD
-
-    philosophs[0].doWork();
-
-
-    for(int i = 0 ; i < philosophers ; i++) {
-
-
+    for (int i = 0; i < philosophers; i++) {
+        philos.emplace_back();  // Create philosopher objects
     }
 
+    for (int i = 0; i < philosophers; i++) {
+        threads.emplace_back(&Philosopher::dine, &philos[i], i);
+    }
 
+    for (auto &t : threads) {
+        t.join(); // Wait for all philosophers to finish
+    }
 
+    std::cout << "All philosophers have finished eating.\n";
 }
