@@ -7,7 +7,7 @@
 
 class Philosopher {
 public:
-    static int sharedCounter;
+    static int philosopherCount;
     static std::vector<std::unique_ptr<std::mutex>> forks;  // Vector of mutex pointers
 
     static void createForks(int count);

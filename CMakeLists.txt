@@ -8,8 +8,6 @@ add_executable(Filozofowie main.cpp
         Helper.h
         Program.cpp
         Program.h
-        Fork.cpp
-        Fork.h
         Philosopher.cpp
         Philosopher.h
         main.cpp)

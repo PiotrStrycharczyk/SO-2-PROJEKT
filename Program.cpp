@@ -8,9 +8,9 @@
 
 void Program::mainProgram() {
     Helper helper;
-    int philosophers = 5; // or use: helper.getCountOfPhilosophers();
+    Philosopher::philosopherCount = helper.getCountOfPhilosophers();
+    int philosophers = Philosopher::philosopherCount;
 
-    Philosopher::sharedCounter = philosophers;
     Philosopher::createForks(philosophers); // Static function to create forks
 
     std::vector<std::thread> threads;

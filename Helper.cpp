@@ -6,10 +6,6 @@
 #include <iostream>
 
 
-bool Helper::ifBothChopSticksAvailable() {
-
-}
-
 int Helper::getCountOfPhilosophers() {
     std::cout<<"Philosophers count: ";
     std::cin.clear(); // Clear the error flag

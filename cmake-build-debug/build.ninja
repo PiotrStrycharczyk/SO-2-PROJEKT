@@ -67,12 +67,6 @@ build CMakeFiles/Filozofowie.dir/Program.cpp.obj: CXX_COMPILER__Filozofowie_unsc
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
 
-build CMakeFiles/Filozofowie.dir/Fork.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/Fork.cpp || cmake_object_order_depends_target_Filozofowie
-  DEP_FILE = CMakeFiles\Filozofowie.dir\Fork.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Filozofowie.dir
-  OBJECT_FILE_DIR = CMakeFiles\Filozofowie.dir
-
 build CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj: CXX_COMPILER__Filozofowie_unscanned_Debug C$:/Users/Piotr/CLionProjects/Filozofowie/Philosopher.cpp || cmake_object_order_depends_target_Filozofowie
   DEP_FILE = CMakeFiles\Filozofowie.dir\Philosopher.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
@@ -87,7 +81,7 @@ build CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj: CXX_COMPILER__Filozofowie_
 #############################################
 # Link the executable Filozofowie.exe
 
-build Filozofowie.exe: CXX_EXECUTABLE_LINKER__Filozofowie_Debug CMakeFiles/Filozofowie.dir/main.cpp.obj CMakeFiles/Filozofowie.dir/Helper.cpp.obj CMakeFiles/Filozofowie.dir/Program.cpp.obj CMakeFiles/Filozofowie.dir/Fork.cpp.obj CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj
+build Filozofowie.exe: CXX_EXECUTABLE_LINKER__Filozofowie_Debug CMakeFiles/Filozofowie.dir/main.cpp.obj CMakeFiles/Filozofowie.dir/Helper.cpp.obj CMakeFiles/Filozofowie.dir/Program.cpp.obj CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Filozofowie.dir

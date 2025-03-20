@@ -10,7 +10,6 @@
 class Helper {
 public:
     int countOfPhilosophers;
-    bool ifBothChopSticksAvailable();
     int getCountOfPhilosophers();
 
 };
