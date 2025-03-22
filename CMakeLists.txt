@@ -3,6 +3,9 @@ project(Filozofowie)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_GENERATOR_PLATFORM x64) # Dla 64-bit
+set(CMAKE_EXE_LINKER_FLAGS "-static -W")
+
 add_executable(Filozofowie main.cpp
         Helper.cpp
         Helper.h

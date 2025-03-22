@@ -83,6 +83,7 @@ build CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj: CXX_COMPILER__Filozofowie_
 
 build Filozofowie.exe: CXX_EXECUTABLE_LINKER__Filozofowie_Debug CMakeFiles/Filozofowie.dir/main.cpp.obj CMakeFiles/Filozofowie.dir/Helper.cpp.obj CMakeFiles/Filozofowie.dir/Program.cpp.obj CMakeFiles/Filozofowie.dir/Philosopher.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -static -W
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Filozofowie.dir
   POST_BUILD = cd .
