@@ -1,8 +1,8 @@
 _**The Dining-Philosophers Problem**_
 
 1. Run Project\
-To run project type in cmd in directory with project:
-a) g++ -o program main.cpp Program.cpp Philosopher.cpp Helper.cpp -static
+To run project type in cmd in directory with project:\
+a) g++ -o program main.cpp Program.cpp Philosopher.cpp Helper.cpp -static\
 b) program
 
 2. Problem\
