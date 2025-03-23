@@ -11,13 +11,13 @@ void Program::mainProgram() {
     Philosopher::philosopherCount = helper.getCountOfPhilosophers();
     int philosophers = Philosopher::philosopherCount;
 
-    Philosopher::createForks(philosophers); // Static function to create forks
+    Philosopher::createForks(philosophers);// Static function to create forks
 
     std::vector<std::thread> threads;
     std::vector<Philosopher> philos;
 
     for (int i = 0; i < philosophers; i++) {
-        philos.emplace_back();  // Create philosopher objects
+        philos.emplace_back(); // Create philosopher objects
     }
 
     for (int i = 0; i < philosophers; i++) {
@@ -25,7 +25,7 @@ void Program::mainProgram() {
     }
 
     for (auto &t : threads) {
-        t.join(); // Wait for all philosophers to finish
+        t.join();//compleing the threads , using it ensures that a thread has been terminated
     }
 
     std::cout << "All philosophers have finished eating.\n";
